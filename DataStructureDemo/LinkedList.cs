@@ -151,5 +151,27 @@ namespace DataStructureDemo
                 newNode = newNode.next;
             return null;
         }
+        /// <summary>
+        /// UC 7
+        /// Searches the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public int SearchValue(int value)
+        {
+            int count = 0;
+            Node temp = this.head;
+            while (temp != null)
+            {
+                if (temp.data == value)
+                {
+                    Console.WriteLine("\nFound " + value);
+                    return count;
+                }
+                temp = temp.next;
+                count++;
+            }
+            return count;
+        }
     }
 }
