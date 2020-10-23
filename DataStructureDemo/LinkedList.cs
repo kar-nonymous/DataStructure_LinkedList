@@ -120,5 +120,17 @@ namespace DataStructureDemo
             Console.WriteLine("Inserted Value is - " + head.next.data);
             return head;
         }
+        /// <summary>
+        /// UC 5
+        /// Deletes the first node.
+        /// </summary>
+        /// <returns></returns>
+        public Node DeleteFirstNode()
+        {
+            if (this.head == null)
+                return null;
+            this.head = this.head.next;
+            return this.head;
+        }
     }
 }
