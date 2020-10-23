@@ -11,18 +11,18 @@ namespace DataStructureDemo
         /// UC1
         /// Inserts the last.
         /// </summary>
-        /// <param name="new_data">The new data.</param>
-        public void InsertLast(int new_data)
+        /// <param name="newData">The new data.</param>
+        public void InsertLast(int newData)
         {
-            Node new_node = new Node(new_data);
+            Node newNode = new Node(newData);
             if (this.head == null)
-                this.head = new_node;
+                this.head = newNode;
             else
             {
                 Node lastNode = GetLastNode();
-                lastNode.next = new_node;
+                lastNode.next = newNode;
             }
-            Console.WriteLine("Insert into list " + new_node.data);
+            Console.WriteLine("Insert into list " + newNode.data);
         }
         /// <summary>
         /// Gets to the last node
@@ -54,6 +54,124 @@ namespace DataStructureDemo
                     temp = temp.next;
                 }
             }
+        }
+        /// <summary>
+        /// UC 2
+        /// Inserts data at the front.
+        /// </summary>
+        /// <param name="newData">The new data.</param>
+        public void InsertFront(int newData)
+        {
+            Node newNode = new Node(newData);
+            newNode.next = this.head;
+            this.head = newNode;
+            Console.WriteLine("Inserted in " + newNode.data);
+        }
+        /// <summary>
+        /// UC3
+        /// Appends the specified new data.
+        /// </summary>
+        /// <param name="newData">The new data.</param>
+        public void Append(int newData)
+        {
+            Node newNode = new Node(newData);
+            if (this.head == null)
+                this.head = newNode;
+            else
+            {
+                Node lastNode = GetLastNode();
+                lastNode.next = newNode;
+            }
+            Console.WriteLine("Insert into list " + newNode.data);
+        }
+        /// <summary>
+        /// UC4
+        /// Inserts data at particular position
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="newData"></param>
+        /// <returns></returns>
+        public Node InsertAtParticularPosition(int position, int newData)
+        {
+            if (position < 1)
+                Console.WriteLine("The Position passed is invalid");
+            else if (position == 1)
+            {
+                Node newNode = new Node(newData);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node temp = new Node(newData);
+                        temp.next = this.head.next;
+                        head.next = temp;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position Out Of Range");
+            }
+            Console.WriteLine("Inserted Value is - " + head.next.data);
+            return head;
+        }
+        /// <summary>
+        /// UC 5
+        /// Deletes the first node.
+        /// </summary>
+        /// <returns></returns>
+        public Node DeleteFirstNode()
+        {
+            if (this.head == null)
+                return null;
+            this.head = this.head.next;
+            return this.head;
+        }
+        /// <summary>
+        /// UC 6
+        /// Deletes the last node.
+        /// </summary>
+        /// <returns></returns>
+        public Node DeleteLastNode()
+        {
+            Node newNode = this.head;
+            if (this.head == null)
+                return null;
+            if (this.head.next == null)
+            {
+                this.head = null;
+                return null;
+            }
+            while (newNode.next.next != null)
+                newNode = newNode.next;
+            return null;
+        }
+        /// <summary>
+        /// UC 7
+        /// Searches the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public int SearchValue(int value)
+        {
+            int count = 0;
+            Node temp = this.head;
+            while (temp != null)
+            {
+                if (temp.data == value)
+                {
+                    Console.WriteLine("\nFound " + value);
+                    return count;
+                }
+                temp = temp.next;
+                count++;
+            }
+            return count;
         }
     }
 }

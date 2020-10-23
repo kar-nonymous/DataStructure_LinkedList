@@ -7,9 +7,10 @@ namespace DataStructureDemo
         static void Main(string[] args)
         {
             LinkedList list = new LinkedList();
-            list.InsertLast(56);
-            list.InsertLast(30);
-            list.InsertLast(70);
+            list.Append(70);
+            list.Append(30);
+            list.Append(56);
+            list.SearchValue(30);
         }
     }
 }
