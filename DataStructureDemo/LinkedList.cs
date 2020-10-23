@@ -55,5 +55,17 @@ namespace DataStructureDemo
                 }
             }
         }
+        /// <summary>
+        /// UC 2
+        /// Inserts data in the front.
+        /// </summary>
+        /// <param name="new_data">The new data.</param>
+        public void InsertFront(int new_data)
+        {
+            Node new_node = new Node(new_data);
+            new_node.next = this.head;
+            this.head = new_node;
+            Console.WriteLine("Inserted in " + new_node.data);
+        }
     }
 }
