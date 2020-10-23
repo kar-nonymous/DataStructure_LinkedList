@@ -132,5 +132,24 @@ namespace DataStructureDemo
             this.head = this.head.next;
             return this.head;
         }
+        /// <summary>
+        /// UC 6
+        /// Deletes the last node.
+        /// </summary>
+        /// <returns></returns>
+        public Node DeleteLastNode()
+        {
+            Node newNode = this.head;
+            if (this.head == null)
+                return null;
+            if (this.head.next == null)
+            {
+                this.head = null;
+                return null;
+            }
+            while (newNode.next.next != null)
+                newNode = newNode.next;
+            return null;
+        }
     }
 }

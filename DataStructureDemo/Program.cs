@@ -10,7 +10,7 @@ namespace DataStructureDemo
             list.Append(70);
             list.Append(30);
             list.Append(56);
-            list.DeleteFirstNode();
+            list.DeleteLastNode();
             list.Display();
         }
     }
