@@ -7,9 +7,9 @@ namespace DataStructureDemo
         static void Main(string[] args)
         {
             LinkedList list = new LinkedList();
-            list.InsertFront(70);
-            list.InsertFront(56);
-            list.InsertFront(30);
+            list.Append(56);
+            list.Append(30);
+            list.Append(70);
             list.Display();
         }
     }

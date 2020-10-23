@@ -67,5 +67,22 @@ namespace DataStructureDemo
             this.head = new_node;
             Console.WriteLine("Inserted in " + new_node.data);
         }
+        /// <summary>
+        /// UC3
+        /// Appends the specified new data.
+        /// </summary>
+        /// <param name="new_data">The new data.</param>
+        public void Append(int new_data)
+        {
+            Node new_node = new Node(new_data);
+            if (this.head == null)
+                this.head = new_node;
+            else
+            {
+                Node lastNode = GetLastNode();
+                lastNode.next = new_node;
+            }
+            Console.WriteLine("Insert into list " + new_node.data);
+        }
     }
 }
