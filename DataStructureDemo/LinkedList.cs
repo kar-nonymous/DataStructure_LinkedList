@@ -57,7 +57,7 @@ namespace DataStructureDemo
         }
         /// <summary>
         /// UC 2
-        /// Inserts data in the front.
+        /// Inserts data at the front.
         /// </summary>
         /// <param name="new_data">The new data.</param>
         public void InsertFront(int new_data)
