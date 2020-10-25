@@ -21,5 +21,19 @@ namespace UnitTestProject
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void TestForSize()
+        {
+            LinkedList list = new LinkedList();
+            ///Arrange
+            list.InsertLast(70);
+            list.InsertLast(30);
+            list.InsertLast(56);
+            int expectedSize = 3;
+            ///Act
+            int actualSize = list.Size();
+            ///Assert
+            Assert.AreEqual(expectedSize, actualSize);
+        }
     }
 }
