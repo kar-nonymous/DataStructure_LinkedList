@@ -173,5 +173,27 @@ namespace DataStructureDemo
             }
             return count;
         }
+        /// <summary>
+        /// UC 8
+        /// Inserts node after given node
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="newData"></param>
+        public void InsertNodeAfterGivenNode(int value, int newData)
+        {
+            Node temp = this.head;
+            Node newNode = new Node(newData);
+            while (temp != null)
+            {
+                if (temp.data.Equals(value))
+                {
+                    Console.WriteLine("\nFound " + value);
+                    break;
+                }
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
     }
 }
