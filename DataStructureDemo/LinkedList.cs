@@ -228,5 +228,42 @@ namespace DataStructureDemo
             }
             return count;
         }
+        /// <summary>
+        /// UC 10
+        /// Add nodes in  the linked list in sorted manner
+        /// </summary>
+        /// <param name="newData"></param>
+        public void OrderedLinkedList(int newData)
+        {
+            Node newNode = new Node(newData);
+            if (this.head == null)
+                this.head = newNode;
+            else
+            {
+                if (newNode.data < this.head.data)
+                {
+                    newNode.next = this.head;
+                    this.head = newNode;
+                }
+                else
+                {
+                    Node temp = this.head;
+                    while (temp.next != null && temp.next.data < newData)
+                    {
+                        temp = temp.next;
+                    }
+                    if (temp.next != null)
+                    {
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                    }
+                    else
+                    {
+                        temp.next = newNode;
+                        newNode.next = null;
+                    }
+                }
+            }
+        }
     }
 }
